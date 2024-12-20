@@ -1,10 +1,6 @@
 package com.app.degitalbanking.services;
 
 import com.app.degitalbanking.dtos.*;
-import com.app.degitalbanking.entities.BankAccount;
-import com.app.degitalbanking.entities.CurrentAccount;
-import com.app.degitalbanking.entities.Customer;
-import com.app.degitalbanking.entities.SavingAccount;
 import com.app.degitalbanking.exception.BalanceNotSufficentException;
 import com.app.degitalbanking.exception.BankAccountNotFoundException;
 import com.app.degitalbanking.exception.CustomerNotFoundException;
@@ -35,4 +31,6 @@ public interface BankAccountService {
     List<AccountOperationDTO> getAccountOperations(String accountId) throws BankAccountNotFoundException;
 
     AccountHistoryDTO getAccountHistory(String accountId, int page, int size) throws BankAccountNotFoundException;
+
+    List<CustomerDTO> searchCutomers(String keyword);
 }
